@@ -6,7 +6,8 @@
   "scripts": {
     "regression": "npx playwright test",
     "singleTest": "npx playwright test tests/UIBasics.spec.js",
-    "testReport": "npx playwright test tests/UIBasics.spec.js --reporter=line,allure-playwright",
+    "allureTest": "npx playwright test tests/basics.spec.js --reporter=line,allure-playwright",
+    "allureReport": "allure generate ./allure-results --clean && allure open ./allure-report",
     "SafariNewConfig": "npx playwright test --config playwright.config1.js --project=safari",
     "CucumberRegression": "npx cucumber-js --tags '@Regression' --retry 1 --exit --format html:cucumber-report.html"
   },
@@ -15,6 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.44.1",
-    "@types/node": "^20.12.12"
+    "@types/node": "^20.12.12",
+    "allure-playwright": "^2.15.1"
   }
 }
